@@ -4,8 +4,8 @@ setup CUDA environment &amp; Jupyter notebook remote server for windows
 ## For windows!!!
 
 * [ CUDA environment ](#cuda)
-* [ Jupyter notebook server ](#server)
 * [ Router settings ](#router)
+* [ Jupyter notebook server ](#server)
 * [ side-issues](#issue)
 
 **Anaconda**\
