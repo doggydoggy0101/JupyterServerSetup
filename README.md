@@ -60,7 +60,7 @@ print(torch.cuda.is_available())
 <a name="router"></a>
 ## Router settings
 **static IP address**\
-check the information of yout static IP address by the following steps:
+check the information of your static IP address by the following steps:
 
 
 1. win+R type ncpa.cpl
