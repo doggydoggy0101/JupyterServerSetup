@@ -81,7 +81,7 @@ Copy all the information of the IP address here, set it to automatically obtain 
 
 Now ```<staticIPaddress>:<specificPort>``` should connect to your device, where ```<staticIPaddress>``` is the connection to your router and ```<specificPort>``` is the connection from your router to your device. 
 
-Remmember to change your device to automatically obtain IP address from where you check the IP information.
+Remember to change your device to automatically obtain IP address from where you check the IP information.
 
 
 <a name="server"></a>
