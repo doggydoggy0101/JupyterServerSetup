@@ -5,13 +5,14 @@ setup CUDA environment &amp; Jupyter notebook remote server for windows
 
 * [ CUDA environment ](#cuda)
 * [ Jupyter notebook server ](#server)
+* [ Router settings ](#router)
 * [ side-issues](#issue)
 
 **Anaconda**\
 https://www.anaconda.com/download
 
 <a name="cuda"></a>
-### CUDA environment
+## CUDA environment
 
 **Nvidia driver** (normally built-in)\
 https://www.nvidia.com.tw/Download/index.aspx?lang=en
@@ -55,27 +56,53 @@ print(torch.cuda.is_available())
 # print(torch.cuda.get_device_name(0))
 ```
 
+
+<a name="router"></a>
+## Router settings
+**static IP address**\
+check the information of yout static IP address by the following steps:
+
+
+1. win+R type ncpa.cpl
+2. right click ```<yourEthernet>``` properties
+3. double click Internet Protocol Version 4 (TCP/IPv4) 
+
+Copy all the information of the IP address here, set it to automatically obtain IP address afterwards.
+
+**Router**
+
+1. set up your router with your static IP address
+
+2. assign a specific IP for your device from DHCP IP reservation\
+   (routers assign dynamic IP addresses for devices by default, setting a specific IP address is necessary for port fowarding)
+
+3. set up a specific port for your device's IP from NAT/port fowarding setting\
+   (the specific IP above, use the same port for external and internal port just for simplicity)
+
+Now ```<staticIPaddress>:<specificPort>``` should connect to your device, where ```<staticIPaddress>``` is the connection to your router and ```<specificPort>``` is the connection from your router to your device. 
+
+Remmember to change your device to automatically obtain IP address from where you check the IP information.
+
+
 <a name="server"></a>
-### Jupyter notebook server
+## Jupyter notebook server
 jupyter notebook should be installed with anaconda
 
 ```shell
 ### set a password
 jupyter notebook password
-### get your ip address
-ipconfig
 ```
 
 **host jupyter notebook**\
-host with IP 0.0.0.0, local machine use localhost or 127.0.0.1, others use \<yourIPaddress>, port doesn't matters
+host with IP 0.0.0.0, local machine use localhost or 127.0.0.1, others use ```<staticIPaddress>```, port is the ```<specificPort>```
 
 ```shell
-jupyter notebook --no-browser --ip 0.0.0.0 --port 8888
+jupyter notebook --no-browser --ip 0.0.0.0 --port <specificPort>
 
 ### local machine
-127.0.0.1:8888
+127.0.0.1:<specificPort>
 ### others
-<yourIPaddress>:8888
+<staticIPaddress>:<specificPort>
 ```
 
 <a name="issue"></a>
@@ -84,3 +111,5 @@ got an error after ctrl+C while training, upgrading scipy should work
 ```shell
 pip install --upgrade scipy
 ```
+
+set up remote desktop by port 3389
