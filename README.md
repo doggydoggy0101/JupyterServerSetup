@@ -34,11 +34,7 @@ nvcc -V
 https://developer.nvidia.com/rdp/cudnn-archive
 
 download version that is compatibe with CUDA 11.7 (or the CUDA version you installed),\
-copy contents in bin/include/lib to the folders respectively, path:
-
-```
-C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7
-```
+copy contents in ```bin/include/lib``` to the folders respectively, path is ```C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7```
 
 **Pytorch with CUDA**\
 https://pytorch.org/get-started/locally/
@@ -111,5 +107,16 @@ got an error after ctrl+C while training, upgrading scipy should work
 ```shell
 pip install --upgrade scipy
 ```
-
+---
+jupyter notebook uses powershell by default, but powershell may not work with conda environment
+```
+jupyter notebook --generate-config
+```
+then go to config located at ```<user>/.jupyter/jupyter_notebook_config.py``` and change it to cmd
+```
+c.NotebookApp.terminado_settings = {
+    'shell_command': ['C:\\Windows\\System32\\cmd.exe']
+}
+```
+---
 set up remote desktop by port 3389
