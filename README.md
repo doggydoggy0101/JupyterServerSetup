@@ -6,6 +6,7 @@ setup CUDA environment &amp; Jupyter notebook remote server for windows
 * [ CUDA environment ](#cuda)
 * [ Router settings ](#router)
 * [ Jupyter notebook server ](#server)
+* [ Environments ](#conda)
 * [ side-issues](#issue)
 
 **Anaconda**\
@@ -100,6 +101,32 @@ jupyter notebook --no-browser --ip 0.0.0.0 --port <specificPort>
 ### others
 <staticIPaddress>:<specificPort>
 ```
+
+<a name="conda"></a>
+### Environments
+**conda environments**
+```shell
+### create new environment
+conda create --name <envName> python=<pythonVersion>
+conda activate <envName>
+conda deactivate
+
+### manage conda environments
+conda env list
+conda remove --name <envName>  --all
+```
+**jupyter notebook kernels**
+```shell
+### create new kernel
+conda activate <envName>
+(envName)$ pip install jupyter
+(envName)$ ipython kernel install --name "<kernelName>"
+
+### manage jupyter kernels
+jupyter kernelspec list
+jupyter kernelspec remove <kernelName>
+```
+
 
 <a name="issue"></a>
 ### side-issues
