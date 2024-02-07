@@ -8,6 +8,7 @@ setup CUDA environment &amp; Jupyter notebook remote server for windows
 * [ Jupyter notebook server ](#server)
 * [ Environments ](#conda)
 * [ side-issues](#issue)
+* [ others](#other)
 
 **Anaconda**\
 https://www.anaconda.com/download
@@ -147,3 +148,20 @@ c.NotebookApp.terminado_settings = {
 ```
 ---
 set up remote desktop by port 3389
+
+
+<a name="other"></a>
+### others
+
+linux conda install
+
+https://jscinin.medium.com/linux-ubuntu-%E7%B3%BB%E7%B5%B1%E4%B8%8B%E5%AE%89%E8%A3%9D-anaconda-be5021ff4cd2
+
+linux conda path
+
+https://blog.csdn.net/weixin_38705903/article/details/86533863
+
+wsl with VcXsrv gui
+
+https://hackmd.io/@JYU/B1zmv1MCU
+
